@@ -4,13 +4,6 @@
 #include <algorithm>
 using namespace std;
 
-//Guarda todos los enteros en un array. Para cada consulta, recorre el array dos veces con dos bucles anidados.
-//Calcular todas las sumas posibles dentro de los dos bucles anidados y guardar la suma de los armarios.
-
-//Cada consulta dará lugar a un máximo de 500 000 iteraciones para calcular todas las sumas.
-//Se podrían aplicar varias optimizaciones, por ejemplo, ordenar la matriz, luego recorrerla para elegir el primer número
-//y luego elegir el segundo número con la ayuda de la búsqueda binaria.
-
 int main()
 {
     cin.tie(NULL);  // cin is faster than scanf
