@@ -8,13 +8,14 @@ using namespace std;
 
 int C[143], DP[20086];  // DP[i] = minimum number of coins to make change for i cents
 int main() {
-    ios_base::sync_with_stdio(0);cin.tie(0);   // fast input
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);   // fast input
 
-    int T, n, p;  // T = number of test cases, n = number of coins, p = price
-    cin >> T;    // read number of test cases
-    while (T--) {   // for each test case
+    int ncasos, n, p;  // ncasos = number of test cases, n = number of coins, p = price
+    cin >> ncasos;    // read number of test cases
+    while (ncasos--) {   // for each test case
         cin >> p >> n;  // read price and number of coins
-        for (int i=0; i<n; ++i)  // read coins
+        for (int i=0; i<n; ++i)
             cin >> C[i];  // read coin
 
         memset(DP, 127, sizeof(DP)); // initialize DP
