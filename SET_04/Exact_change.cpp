@@ -4,27 +4,29 @@
 
 using namespace std;
 
-int C[143], DP[20086];
+// Exact Change
+
+int C[143], DP[20086];  // DP[i] = minimum number of coins to make change for i cents
 int main() {
-    ios_base::sync_with_stdio(0);cin.tie(0);
+    ios_base::sync_with_stdio(0);cin.tie(0);   // fast input
 
-    int T, n, p;
-    cin >> T;
-    while (T--) {
-        cin >> p >> n;
-        for (int i=0; i<n; ++i)
-            cin >> C[i];
+    int T, n, p;  // T = number of test cases, n = number of coins, p = price
+    cin >> T;    // read number of test cases
+    while (T--) {   // for each test case
+        cin >> p >> n;  // read price and number of coins
+        for (int i=0; i<n; ++i)  // read coins
+            cin >> C[i];  // read coin
 
-        memset(DP, 127, sizeof(DP));
-        DP[0] = 0;
-        for (int i=0; i<n; ++i) {
-            int c = C[i];
-            for (int j=p; j>=0; --j)
-                DP[j+c] = min(DP[j+c], DP[j]+1);
+        memset(DP, 127, sizeof(DP)); // initialize DP
+        DP[0] = 0; // minimum number of coins to make change for 0 cents is 0
+        for (int i=0; i<n; ++i) { // for each coin
+            int c = C[i];  // coin
+            for (int j=p; j>=0; --j)  // for each amount of change
+                DP[j+c] = min(DP[j+c], DP[j]+1); // update DP
         }
 
-        int j;
-        for (j=p; DP[j]>100; ++j);
-        cout << j << ' ' << DP[j] << '\n';
+        int j;  // amount of change
+        for (j=p; DP[j]>100; ++j);  // find minimum amount of change
+        cout << j << ' ' << DP[j] << '\n'; // print minimum amount of change and minimum number of coins
     }
 }
