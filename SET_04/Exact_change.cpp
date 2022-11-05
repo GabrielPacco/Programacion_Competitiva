@@ -17,13 +17,16 @@ int main() {
         for (int i=0; i<n; ++i)
             cin >> C[i];  // read coin
 
-        memset(DP, 127, sizeof(DP)); // initialize DP with infinity
+        memset(DP, 127, sizeof(DP)); // initialize DP
 
         DP[0] = 0; // minimum number of coins to make change for 0 cents is 0
         for (int i=0; i<n; ++i) { // for each coin
             int c = C[i];  // coin
-            for (int j=p; j>=0; --j)  // for each amount of change
+            for (int j=p; j>=0; --j) { // for each amount of change
                 DP[j+c] = min(DP[j+c], DP[j]+1); // update DP
+                cout << "DP[j+c] = " << DP[j+c] << endl;
+                cout << "DP[j] = " << DP[j] << endl;
+            }
         }
 
         int j;  // amount of change
