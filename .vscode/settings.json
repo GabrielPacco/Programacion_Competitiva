@@ -3,6 +3,7 @@
     "code-runner.saveAllFilesBeforeRun": true,
     "files.associations": {
         "queue": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "utility": "cpp"
     }
 }
