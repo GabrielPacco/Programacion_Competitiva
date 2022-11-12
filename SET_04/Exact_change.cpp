@@ -24,8 +24,6 @@ int main() {
             int c = C[i];  // coin
             for (int j=p; j>=0; --j) { // for each amount of change
                 DP[j+c] = min(DP[j+c], DP[j]+1); // update DP
-                cout << "DP[j+c] = " << DP[j+c] << endl;
-                cout << "DP[j] = " << DP[j] << endl;
             }
         }
 
