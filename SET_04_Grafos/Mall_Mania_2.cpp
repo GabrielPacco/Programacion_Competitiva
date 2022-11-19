@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-constexpr int MAX = 1 << 12;
+constexpr int MAX = 1 << 11;
 
 int grid[MAX][MAX];
 vector<pair<int, int>> directions = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};

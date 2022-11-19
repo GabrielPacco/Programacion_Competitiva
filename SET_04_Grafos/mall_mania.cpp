@@ -5,8 +5,6 @@
 
 using namespace std;
 
-// Mall Mania
-
 const int EMPTY = -1;  // nodo vacío
 const int GOAL = -2;   // nodo objetivo
 const int MAXSIZE = 2010;  // tamaño máximo del laberinto
@@ -32,11 +30,11 @@ int main() {
             grid[a][s] = GOAL;  // marcar la celda como objetivo
         }
 
-        int distance;   // distancia de la célula inicial
+        int distance;   // distancia de la calda inicial
         bool found_path = false;  // para indicar si se ha encontrado una ruta
         while (!q.empty() && !found_path) {  // mientras la cola no esté vacía y no se haya encontrado ninguna ruta
             pair<int, int> u = q.front();  // obtener la primera celda de la cola
-            q.pop();  // eliminar la célula de la cola
+            q.pop();  // eliminar la calda de la cola
 
             for (auto&& d : dirs) {  // para cada dirección
                 pair<int, int> v = {u.first + d.first, u.second + d.second};  // obtener la siguiente celda
